@@ -1,0 +1,45 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Courses track </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="app">
+        <h1 class="title1">
+            {{titlePage}}
+        </h1>
+        <br>
+        <label for="">Codigo: </label>
+        <span>{{code}}</span>
+        <input type="text" v-model="title" placeholder="Nombre del curso">
+        <input type="number" v-model="time" placeholder="Horas">
+        <button v-on:click="addCourse">Agregar</button>
+        <br>
+        <div>
+            <table class="table">
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Horas</th>
+                <tr v-for="(course,i) in courses" v-bind:key="course.code">
+                    <td>{{course.code}}</td>
+                    <td> {{course.title}} </td>
+                    <td> {{course.time}} </td>
+                </tr>
+            </table>
+        </div>
+        <span>{{totalTime}}</span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
